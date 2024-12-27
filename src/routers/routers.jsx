@@ -3,6 +3,10 @@ import App from '../App'
 import Home from "../pages/home/Home";
 import Login from "../components/Login";
 import Register from "../components/Register";
+import CartPage from "../pages/books/CartPage";
+import CheckOutPage from "../pages/books/CheckOutPage";
+import SingleBook from "../pages/books/SingleBook";
+import PrivateRoute from "./PrivateRoute";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -27,6 +31,18 @@ const router = createBrowserRouter([
       {
         path: '/register',
         element: <Register />
+      },
+      {
+        path: '/cart',
+        element: <CartPage />
+      },
+      {
+        path: '/checkout',
+        element: <PrivateRoute><CheckOutPage /></PrivateRoute>
+      },
+      {
+        path: '//books/:id',
+        element: <SingleBook />
       }
     ]
   },
